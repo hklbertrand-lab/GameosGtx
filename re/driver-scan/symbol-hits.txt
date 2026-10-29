@@ -1,0 +1,173 @@
+
+== pmu (5 premiers) ==
+0x0172bd72  ...opmu.....W....1.*....Et.'.Z4........7..'....M..=.
+0x026d90c2  ..>.pmuB......ZS......SK...8.a.37p...e+0.G....>.C,..
+0x0394fb56  An..pmu..X........1M...6.`J...8b............&g'N,..P
+0x05c6e2e5  assIpmux.......RMEnableJadePhyFixedClkCARHack..?...>
+0x060f569e  .rm_pmu_perfmon_get_load.nv_acpi_methods_uninit.nvsw
+
+== PMU (40 premiers) ==
+0x02881381  R*,1PMU...Q.wb..S........F(T.............Fn.QP.7....
+0x02b90068  x..+PMUr..7A...,..&R.-h..?......2.....YzCBX9}...K&l.
+0x049217cf  {.XrPMU..8.T...5...X2......c..)..t/\....s........k/p
+0x04dfa813  .%..PMU.......Y..=K.........90N.l.B3.W.-m...........
+0x050bec4b  .Hn.PMU.;..@]T.r....[y.X.MJ....0.h{'d....3On._.F-Es.
+0x05802a0d  ..hAPMUK...h....[.;...$....f....c......}P.|..0N.C.d.
+0x05c7002b  ST1.PMU.HOST6.HOST4.HOSTSR.HOST5.HOST0.PTP.PERF.HOST
+0x05c701dc  ENT_PMU.HUBCLIENT_RASTERTWOD.HUBCLIENT_SCC.HUBCLIENT
+0x05c70a6e  ENT_PMU.HUBCLIENT_RASTERTWOD.HUBCLIENT_SCC.HUBCLIENT
+0x05c70f78  CE1.PMU.PTP.NVENC0.CE2.CE3.CE4.CE5.PHYSICAL.........
+0x05c71620  T13.PMU.BAR1.PTP.NVENC2.IFB.CE0.BAR2.CE3.CE1.CE5.CE2
+0x05c717ba  ENT_PMU.HUBCLIENT_RASTERTWOD.HUBCLIENT_SCC.HUBCLIENT
+0x05c720c2  OWN.PMU.BAR1.PERF.IFB.PTP.CE2.NVJPG.CE7.NVENC1.CE1.B
+0x05c7226b  ENT_PMU.HUBCLIENT_RASTERTWOD.HUBCLIENT_SCC.HUBCLIENT
+0x05c72b2f  LAY.PMU.GRAPHICS.HUBCLIENT_VPR_SCRUBBER0.HUBCLIENT_F
+0x05c72f35  ENT_PMU.HUBCLIENT_PD.HUBCLIENT_RASTERTWOD.HUBCLIENT_
+0x05c7387c  OFA.PMU.CE0.NVJPG.NVDEC2.CE3.PTP.UNKNOWN.NVENC0.NVDE
+0x05c73c58  ENT_PMU.HUBCLIENT_NISO.HUBCLIENT_PD.HUBCLIENT_MMU.HU
+0x05c745c2  OFA.PMU.NVENC2.SEC.NVENC1.NVDEC3.NVJPG3.CE3.NVJPG1.C
+0x05c7796f  ize.PMU.NVRISCV.initPmuApp..........................
+0x05c79bfc  008.PMU.FBFLCN.GR.COPY.NVDEC.NVENC.NVJPEG.OFA.VP.ME.
+0x05c7f162  T: _PMU_DCLS.SEC_FAULT: _IFF_PRI_ERROR.SEC_FAULT: _F
+0x05c7f1b9  T: _PMU_WDT.SEC_FAULT: _SEC2_WDT.SEC_FAULT: _FSP_EMP
+0x05c80559  T: _PMU_DCLS.SEC_FAULT: _PMU_L5_WDT........SEC_FAULT
+0x05c8056e  T: _PMU_L5_WDT........SEC_FAULT: _IFF_POS value: 0x%
+0x05c80b26  T: _PMU_DCLS.SEC_FAULT: _PMU_L5_WDT.SEC_FAULT: _GPMV
+0x05c80b3b  T: _PMU_L5_WDT.SEC_FAULT: _GPMVDD_VMON.SEC_FAULT: _G
+0x05c812a6  T: _PMU_DCLS.SEC_FAULT: _PMU_L5_WDT.SEC_FAULT: _XTAL
+0x05c812bb  T: _PMU_L5_WDT.SEC_FAULT: _XTAL_CTFDC.SEC_FAULT: _CL
+0x05c87036  CIE.PMU.SEC2.GSP.FB Falcon.NVDEC.NVJPG.OFA..........
+0x05cfd749  ULT_PMU_DCLS.SEC_FAULT: _FAULT_SEQ_TOO_BIG.SEC_FAULT
+0x05d5a460  SBC_PMU_PCIE_MIN.BIF_USBC_RM_PCIE_MIN.INTERSECT.CLIE
+0x05d5a93e  ITY.PMU_DOM_GRP_0.PMU_DOM_GRP_1.SLI_GPU_BOOST_DOM_GR
+0x05d5a94c  P_0.PMU_DOM_GRP_1.SLI_GPU_BOOST_DOM_GRP_0.SLI_GPU_BO
+0x05d5caa2  SBC_PMU_PCIE_MIN.BIF_USBC_RM_PCIE_MIN.INTERSECT.CLIE
+0x05d5cf60  ITY.PMU_DOM_GRP_0.PMU_DOM_GRP_1.JPPC_PSTATE_MAX.JPPC
+0x05d5cf6e  P_0.PMU_DOM_GRP_1.JPPC_PSTATE_MAX.JPPC_GPC_MAX.SLI_G
+0x05d60a66  SBC_PMU_PCIE_MIN.BIF_USBC_RM_PCIE_MIN.INTERSECT.CLIE
+0x05d63806  SBC_PMU_PCIE_MIN.BIF_USBC_RM_PCIE_MIN.INTERSECT.CLIE
+0x05d668a3  SBC_PMU_PCIE_MIN.BIF_USBC_RM_PCIE_MIN.INTERSECT.CLIE
+
+== gp102 (0 premiers) ==
+
+== GP102 (0 premiers) ==
+
+== gp10x (0 premiers) ==
+
+== ucode (5 premiers) ==
+0x05c65dcf  con ucode.4b.2d.9b.5b.10b.8b.1b1w2b2d.1b1w2b.2b.1b.1
+0x05d023d4  ECS ucode......................... .................
+0x05d6b700  PMU ucode.RmPmuBootstrapMode.RmPmuUcodeAddrMode.RmPm
+0x05d9583b  :%u ucode:%u [%c-mode] @ pc:0x%llx, data:0x%llx..NVR
+0x05d9588b  :%u ucode:%u [%c-mode] version:%u @ %u..exception.ti
+
+== Ucode (8 premiers) ==
+0x05c5f3d4  vdecUcodeSelect.RmPGHandshakeEnabled.RmVideoEngineTi
+0x05c5f48d  vdecUcodeEncryption.................................
+0x05c77aa8  LoadUcode_GM107.............flcnBootstrapOS_GM107...
+0x05d02103  ceGrUcodeLoad.RMSkipGrResetForInstSys.RmDisableWar17
+0x05d0402e  txswUcodeFromChiplib................................
+0x05d6b6a5  mPmuUcodeProfile.RmOverrideUprocEngineArch.RmPmuRpcP
+0x05d6b71e  mPmuUcodeAddrMode.RmPmuForcePhysMappings.RMBug199004
+0x05d6c445  Sec2UcodeProfile.RmEnableRiscvLs.RMSec2UseDebugFuseO
+
+== falcon (5 premiers) ==
+0x05c77b00  107.falcon instance.................................
+0x05d9f308  ric falcon assert or halt [NV_ERR_FLCN_ERROR].......
+0x05e2ae18  ice_falcon_interrupts_sv10..........................
+0x05e30558  ice_falcon_interrupts_lr10.......................w..
+0x05e735b8  ice_falcon_interrupts_ls10..........................
+
+== Falcon (8 premiers) ==
+0x05c65dc8  ....Falcon ucode.4b.2d.9b.5b.10b.8b.1b1w2b2d.1b1w2b.
+0x05c77a35  107.Falcon Inst........RmDisableRiscvDebugInfoBreakp
+0x05c87046  .FB Falcon.NVDEC.NVJPG.OFA..........................
+0x05d57f34  lsfmFalconReset_IMPL.DisableGrAuto.EnableCoreVoltage
+0x05d58b67  ION Falcon interrupts disabled due to fatal interrup
+0x05d58baf  ION Falcon interrupts disabled due to fatal notifica
+0x05d58d5f  ION Falcon interrupts disabled due to fatal notifica
+0x05d6ba4f  PMU Falcon.PMU, Uncorrectable SRAM Error............
+
+== sec2 (8 premiers) ==
+0x05d6c5b0  ....sec2ctxDestructHal_PHYSICAL.....sec2ctxConstruct
+0x05d6c5d0  ....sec2ctxConstructHal_PHYSICAL....NV95A1 Unknown E
+0x05d8f7c8  cpu_sec2_data_scrubber.cpu_gsp_dma.cpu_sec2_data_ker
+0x05d8f7eb  cpu_sec2_data_kernel.cpu_sec2_hmac_kernel.cpu_sec2_h
+0x05d8f800  cpu_sec2_hmac_kernel.cpu_sec2_hmac_scrubber.cpu_sec2
+0x05d8f815  cpu_sec2_hmac_scrubber.cpu_sec2_data_user.gsp_cpu_lo
+0x05d8f82c  cpu_sec2_data_user.gsp_cpu_locked_rpc.cpu_gsp_locked
+0x05d8f89b  cpu_sec2_hmac_user.gsp_cpu_dma.cpu_gsp_nvle_p2p_wrap
+
+== SEC2 (29 premiers) ==
+0x05c7021e  ENT_SEC2.HUBCLIENT_SSYNC.HUBCLIENT_CE2.HUBCLIENT_XV.
+0x05c70ab0  ENT_SEC2.HUBCLIENT_SSYNC.HUBCLIENT_CE2.HUBCLIENT_XV.
+0x05c717fc  ENT_SEC2.HUBCLIENT_SSYNC.HUBCLIENT_CE2.HUBCLIENT_XV.
+0x05c722ad  ENT_SEC2.HUBCLIENT_SSYNC.HUBCLIENT_CE2.HUBCLIENT_XV.
+0x05c7566d  CE1.SEC2.......FAULT_INFO_TYPE_UNSUPPORTED_KIND.....
+0x05c75aee  CE1.SEC2................4.3...T.................<y..
+0x05c75f0d  CE1.SEC2.NVJPG...........4.3...T.................<y.
+0x05c761a4  CE1.SEC2.NVJPG.OFA................4.3...T...........
+0x05c76a77  CE1.SEC2.NVJPG0.NVJPG1.NVJPG2.NVJPG3.NVJPG4.NVJPG5.N
+0x05c770a2  CE1.SEC2.NVJPG0.NVJPG1.NVJPG2.NVJPG3.NVJPG4.NVJPG5.N
+0x05c77610  CE1.SEC2.NVJPEG0.NVJPEG1.NVJPEG2.NVJPEG3.OFA........
+0x05c79c44  .MP.SEC2.HOST.DPU.Unknown.........................45
+0x05c7f10c  T: _SEC2_SCPM.SEC_FAULT: _FSP_DCLS.SEC_FAULT: _SEC2_
+0x05c7f137  T: _SEC2_DCLS.SEC_FAULT: _GSP_DCLS.SEC_FAULT: _PMU_D
+0x05c7f1cd  T: _SEC2_WDT.SEC_FAULT: _FSP_EMP.SEC_FAULT: _FUSE_PO
+0x05c804e9  T: _SEC2_SCPM.SEC_FAULT: _SEC2_DCLS.SEC_FAULT: _SEC2
+0x05c804ff  T: _SEC2_DCLS.SEC_FAULT: _SEC2_L5_WDT.SEC_FAULT: _GS
+0x05c80515  T: _SEC2_L5_WDT.SEC_FAULT: _GSP_DCLS.SEC_FAULT: _GSP
+0x05c80acc  T: _SEC2_DCLS.SEC_FAULT: _SEC2_L5_WDT.SEC_FAULT: _GS
+0x05c80ae2  T: _SEC2_L5_WDT.SEC_FAULT: _GSP_DCLS.SEC_FAULT: _GSP
+0x05c81236  T: _SEC2_SCPM.SEC_FAULT: _SEC2_DCLS.SEC_FAULT: _SEC2
+0x05c8124c  T: _SEC2_DCLS.SEC_FAULT: _SEC2_L5_WDT.SEC_FAULT: _GS
+0x05c81262  T: _SEC2_L5_WDT.SEC_FAULT: _GSP_DCLS.SEC_FAULT: _GSP
+0x05c8703a  PMU.SEC2.GSP.FB Falcon.NVDEC.NVJPG.OFA..............
+0x05cfd6db  ULT_SEC2_SCPM.SEC_FAULT: _FAULT_FSP_DCLS.SEC_FAULT: 
+0x05cfd712  ULT_SEC2_DCLS.SEC_FAULT: _FAULT_GSP_DCLS.SEC_FAULT: 
+0x05d6c4ee  rch.SEC2 debug.!error!.IDLE.CMDMGMT.CHNMGMT.WKRTHD.R
+0x05d6cf20  ....SEC2-RISCV uncorrectable ECC error......SEC2-RIS
+0x05d6cf48  ....SEC2-RISCV, Uncorrectable SRAM Error.RMDevinitBy
+
+== acr (14 premiers) ==
+0x011bca88  ....acrI....2..>..N.e..&Ik....F....k......6.l.......
+0x01b850af  .p..acr.k.......b......H.XW0.|fb..-..V..3..nP.&..O.v
+0x01c5201e  .-..acr.3....._.A."2.\4..#...=.O...8........eRR.....
+0x01d3b844  .T..acr1s..Q.UHb8.....}...Ol..D.................4H0:
+0x02e7848b  ....acr|...YZJY5....Z...k..-.[...C..F.. |....K...R..
+0x03424bee  #f.xacr.#b...!..H....Ed<pAY.Z}v..d.Z.i..}.hk.uz.(.~P
+0x036798e7  ...wacr..U....=}.$p.D.,...f..wW=9..Go.QSO..r/..g....
+0x03957cbf  ...wacr..U....=}.$p.D.,...f..wW=9..Go.QSO..r/..g....
+0x0451ccf2  .M..acr...`..$2./^9gk|bk^..8N..K..9.w}?B.AEE}.......
+0x05c6828e  ispMacro..............................!error!.IDLE.D
+0x05d6c350  2...acrExecuteHsBin_IMPL.RMPsdlCertStatus...........
+0x05d6c380  ....acrGatherWprInformation_GM200...acrHandlePsdl_GM
+0x05d6c3a0  0...acrHandlePsdl_GM200.............acrUnlockRegions
+0x05d6c3c0  ....acrUnlockRegions_GM200.channel 0x%08x.RmDisableS
+
+== booter (0 premiers) ==
+
+== bootloader (0 premiers) ==
+
+== AppVersion (0 premiers) ==
+
+== nvPmu (0 premiers) ==
+
+== g_pmu (0 premiers) ==
+
+== riscv (0 premiers) ==
+
+== gsp (13 premiers) ==
+0x016d4c2e  \...gsp.......B.H.m...Oge!.....4B..U.\....$4..?9.j..
+0x019d84cf  ....gsp.b.X...<KLK.k..N.&r...j..?mK|...~*I.....N8...
+0x020c57da  E...gsp..k.G...IC...q&...~..;~.p.....'0?...j....9.gL
+0x031a6522  .3(.gsp....._F.]3......UW..+n.FK..~..#...F3..xT .<.X
+0x047cffc8  .p..gsp.|bF...e.V.%&..m.....z..#...qk.`...B...g...F0
+0x0598d0be  ...3gspYo.....n.rG.Z.@..X...x............9wY.d7.[.$.
+0x05d8f7df  cpu_gsp_dma.cpu_sec2_data_kernel.cpu_sec2_hmac_kerne
+0x05d8f83b  ser.gsp_cpu_locked_rpc.cpu_gsp_locked_rpc.gsp_cpu_re
+0x05d8f852  cpu_gsp_locked_rpc.gsp_cpu_replayable_fault.gsp_cpu_
+0x05d8f861  rpc.gsp_cpu_replayable_fault.gsp_cpu_non_replayable_
+0x05d8f87a  ult.gsp_cpu_non_replayable_fault.cpu_sec2_hmac_user.
+0x05d8f8aa  ser.gsp_cpu_dma.cpu_gsp_nvle_p2p_wrapping.RmKeyRotat
+0x05d8f8ba  cpu_gsp_nvle_p2p_wrapping.RmKeyRotationThresholdDelt

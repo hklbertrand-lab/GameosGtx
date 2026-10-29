@@ -1,0 +1,49 @@
+Lignes lues : 30182623
+
+Accès par scénario et par bloc :
+  S1     PMU=    7405 SEC2=       0 FB=   12793
+  S3     PMU=      69 SEC2=       0 FB=       0
+  S5     PMU=      92 SEC2=       0 FB=       0
+  S6     PMU=      92 SEC2=       0 FB=       0
+  S8     PMU=     183 SEC2=       0 FB=       0
+  S9     PMU=     201 SEC2=       0 FB=       0
+  S10    PMU=    1850 SEC2=       0 FB=       6
+  END    PMU=   14420 SEC2=       0 FB=    3840
+
+Octets écrits directement dans l'IMEM (code Falcon en clair) :
+  END    FB    4 octets
+  END    PMU   4 octets
+  S1     FB    12 octets
+  S1     PMU   52 octets
+
+Registres Falcon les plus touchés :
+  PMU   0x4cc        4241
+  PMU   0x4c8        4239
+  PMU   0x01c        1584
+  PMU   0x008        1582
+  PMU   0x018        1582
+  PMU   0x4a4        812
+  PMU   0x004        794
+  PMU   0x094        792
+  FB    0xc80        489
+  PMU   0x4a0        277
+  FB    0xcb8        243
+  FB    0xcec        243
+  FB    0xcbc        243
+  PMU   0xc08        81
+  PMU   0x3c0        42
+  FB    0xcd4        36
+  PMU   IMEMD        14
+  FB    0xcd0        10
+  FB    0x770        9
+  FB    0x778        9
+  FB    0xc10        8
+  FB    0xc34        7
+  FB    0xc14        6
+  FB    0xcc4        6
+  FB    0xcd8        6
+  FB    0xcf8        6
+  PMU   0x014        6
+  PMU   DMACTL       6
+  PMU   DMATRFBASE   6
+  PMU   0x090        6

@@ -1,0 +1,8 @@
+
+# --- GameOS : outils nécessaires dans l'environnement live / installeur ---
+archinstall
+git
+base-devel
+dkms
+linux-zen
+linux-zen-headers

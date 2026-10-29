@@ -1,0 +1,9 @@
+
+  GameOS — installeur console de jeu (Steam + gamescope, NVIDIA Pascal)
+
+  1. archinstall                    (profil minimal, chargeur GRUB ou systemd-boot,
+                                     crée ton utilisateur, noyau linux-zen conseillé)
+  2. cp -r /root/post-install.sh /opt/gameos /mnt/root/
+  3. arch-chroot /mnt env LOCAL_REPO=/root/gameos/repo /root/post-install.sh <utilisateur>
+  4. reboot
+

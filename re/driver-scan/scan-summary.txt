@@ -1,0 +1,32 @@
+Binaire : /usr/src/nvidia-580.196.07/nvidia/nv-kernel.o_binary (107 Mo)
+Régions haute entropie >= 2 Ko : 221
+Volume total haute entropie : 76784 Ko
+
+Plus grosses régions (candidats firmware) :
+  0x01d31000   21504 Ko
+  0x05866000    4028 Ko
+  0x011b7000    2784 Ko
+  0x01acf000    2436 Ko
+  0x03555000    2360 Ko
+  0x01471000    1416 Ko
+  0x01058000    1400 Ko
+  0x05500000    1364 Ko
+  0x0486f000    1164 Ko
+  0x019e2000     944 Ko
+  0x04d97000     788 Ko
+  0x03264000     772 Ko
+  0x056a8000     744 Ko
+  0x057b1000     720 Ko
+  0x03b9d000     656 Ko
+
+Symboles firmware trouvés :
+  pmu          : 5+ occurrences, 1re à 0x0172bd72
+  PMU          : 40+ occurrences, 1re à 0x02881381
+  ucode        : 5+ occurrences, 1re à 0x05c65dcf
+  Ucode        : 8+ occurrences, 1re à 0x05c5f3d4
+  falcon       : 5+ occurrences, 1re à 0x05c77b00
+  Falcon       : 8+ occurrences, 1re à 0x05c65dc8
+  sec2         : 8+ occurrences, 1re à 0x05d6c5b0
+  SEC2         : 29+ occurrences, 1re à 0x05c7021e
+  acr          : 14+ occurrences, 1re à 0x011bca88
+  gsp          : 13+ occurrences, 1re à 0x016d4c2e
