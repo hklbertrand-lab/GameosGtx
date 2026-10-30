@@ -1,0 +1,11 @@
+aaa
+e scr.color=0
+?e ===== xrefs vers "PMU Falcon" (0x5d6ba10) =====
+axt @ 0x5d6ba10
+?e ===== xrefs vers "Falcon ucode" (0x5c65dc8) =====
+axt @ 0x5c65dc8
+?e ===== xrefs vers "FECS ucode" (0x5d023cf) =====
+axt @ 0x5d023cf
+?e ===== fonctions touchant la base PMU 0x10a000 : recherche d'immediat =====
+/v4 0x0010a000
+?e ===== DONE =====

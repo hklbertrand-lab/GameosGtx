@@ -1,0 +1,7 @@
+e scr.color=0
+?e === chaine .rodata @ 0xde480f8 (format getter 649) ===
+psz @ 0xde480f8
+?e === chaine .rodata @ 0xde48377 ===
+psz @ 0xde48377
+?e === octets autour (contexte) ===
+px 256 @ 0xde480f8

@@ -1,0 +1,8 @@
+e scr.color=0
+e asm.bytes=false
+af @ 0x8e17180
+af @ 0x8e652b0
+?e ================ GETTER 615 @ 0x8e17180 COMPLET ================
+pdf @ 0x8e17180
+?e ================ GETTER 617 @ 0x8e652b0 COMPLET ================
+pdf @ 0x8e652b0

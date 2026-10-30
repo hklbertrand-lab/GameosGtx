@@ -1,0 +1,10 @@
+aaa
+e scr.color=0
+e asm.bytes=false
+?e --- flag/fonction a 0x08ec2468 ---
+fd 0x08ec2468
+?e --- fonction englobante (afi) ---
+afi @ 0x08ec2468
+?e --- desassemblage fonction ---
+pdf @ fcn.08ec2468
+pdf @ 0x08ec2468
