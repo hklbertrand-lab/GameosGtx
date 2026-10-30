@@ -140,6 +140,24 @@ DisplayServer=wayland
 EOF
 fi
 
+# ------------------------------------------------- jamais de veille système
+# Les manettes sans fil (ex. Xbox 360) ne peuvent pas réveiller depuis la veille
+# (le lien radio est coupé, la manette ne se re-synchronise pas au récepteur).
+# On interdit donc toute suspension : le système reste allumé, le récepteur à
+# l'écoute, et une pression manette répond instantanément. Écran : voir README
+# (extinction gérée par la TV / son économiseur sur OLED).
+log "Désactivation de la veille système (réveil manette fiable)"
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+install -d /etc/systemd/logind.conf.d
+cat > /etc/systemd/logind.conf.d/10-gameos-nosuspend.conf <<'EOF'
+[Login]
+IdleAction=ignore
+HandleSuspendKey=ignore
+HandleLidSwitch=ignore
+HandleHibernateKey=ignore
+HandlePowerKey=poweroff
+EOF
+
 systemctl enable sddm NetworkManager bluetooth
 
 log "Terminé. Redémarre : la machine démarrera directement dans Steam (mode Deck)."
