@@ -169,6 +169,49 @@ HandleHibernateKey=ignore
 HandlePowerKey=poweroff
 EOF
 
+# ------------------------------------------ bascule Steam <-> Bureau (KDE)
+# "Passer au bureau" (Steam) et "Retour au mode Jeu" (KDE) : un assistant
+# bascule l'autologin SDDM entre gamescope et Plasma puis relance SDDM. Plasma 6
+# doit etre lance DIRECTEMENT par SDDM (un wrapper casse l'enregistrement de sa
+# session systemd/DBus -> ecran noir), d'ou la bascule d'autologin.
+log "Bascule Steam <-> Bureau"
+cat > /usr/local/bin/gameos-session-switch <<'EOF'
+#!/bin/bash
+conf=/etc/sddm.conf.d/10-gameos-autologin.conf
+case "$1" in
+    desktop|plasma)     s=plasma ;;
+    gaming|gamescope|*) s=gamescope-session-steam ;;
+esac
+sed -i "s/^Session=.*/Session=$s/" "$conf"
+systemctl restart sddm
+EOF
+chmod 755 /usr/local/bin/gameos-session-switch
+cat > /usr/lib/os-session-select <<'EOF'
+#!/bin/bash
+case "$1" in
+    plasma|desktop) tgt=desktop ;;
+    gamescope|gaming|gamescope-session-steam) tgt=gaming ;;
+    *) [ "$XDG_CURRENT_DESKTOP" = gamescope ] && tgt=desktop || tgt=gaming ;;
+esac
+exec sudo /usr/local/bin/gameos-session-switch "$tgt"
+EOF
+chmod 755 /usr/lib/os-session-select
+echo "$USER_NAME ALL=(root) NOPASSWD: /usr/local/bin/gameos-session-switch" \
+    > /etc/sudoers.d/60-gameos-session
+chmod 440 /etc/sudoers.d/60-gameos-session
+install -d -o "$USER_NAME" -g "$USER_NAME" "$USER_HOME/.local/share/applications"
+cat > "$USER_HOME/.local/share/applications/gameos-return-to-gaming.desktop" <<'EOF'
+[Desktop Entry]
+Type=Application
+Name=Retour au mode Jeu
+Comment=Revenir a Steam Big Picture
+Exec=steamos-session-select gamescope
+Icon=input-gaming
+Terminal=false
+Categories=Game;
+EOF
+chown "$USER_NAME:$USER_NAME" "$USER_HOME/.local/share/applications/gameos-return-to-gaming.desktop"
+
 systemctl enable sddm NetworkManager bluetooth
 
 log "Terminé. Redémarre : la machine démarrera directement dans Steam (mode Deck)."

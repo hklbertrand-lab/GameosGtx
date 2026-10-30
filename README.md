@@ -36,7 +36,7 @@ Réglages par défaut en tête d'`install.sh` : utilisateur `hklbertrand`, clavi
 | Gaming | steam, gamescope, mangohud, gamemode, pipewire, Vulkan 32 et 64 bits |
 | Session | `gamescope-session-plus` + `gamescope-session-steam`, autologin SDDM (Wayland) |
 | Réglages | `~/.config/environment.d/gamescope-session-plus.conf` (résolution, fréquences, adaptive-sync) |
-| Bureau | KDE Plasma, accessible depuis Steam : Alimentation, puis Passer au bureau |
+| Bureau | KDE Plasma. Bascule Steam ↔ Bureau : « Alimentation → Passer au bureau », puis l'icône « Retour au mode Jeu » sous KDE (assistant qui bascule l'autologin SDDM entre gamescope et Plasma lancé directement — un wrapper casse Plasma 6) |
 
 Options : `NO_AUTOLOGIN=1` pour garder l'écran de connexion, `LOCAL_REPO=dossier` pour utiliser des paquets déjà construits.
 
