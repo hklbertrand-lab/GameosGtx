@@ -13,7 +13,7 @@ set -euo pipefail
 HOSTNAME=gameos
 USERNAME=hklbertrand
 TIMEZONE=Europe/Paris
-KEYMAP=fr
+KEYMAP=us
 LOCALE=en_US.UTF-8
 KERNEL=linux-zen
 REPO_SRC=/opt/gameos/repo                 # dépôt local embarqué dans l'ISO

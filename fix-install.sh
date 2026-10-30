@@ -9,6 +9,9 @@ set +e
 [[ -d /mnt/opt/gameos/repo ]] || { echo "ERREUR: /mnt non monté ou dépôt local absent."; exit 1; }
 PI=/mnt/root/post-install.sh
 
+echo "==> Clavier console en US"
+echo "KEYMAP=us" > /mnt/etc/vconsole.conf
+
 echo "==> Patch du post-install (retrait tolérant + sans linux-headers)"
 sed -i 's@if pacman -Q "\$p" &>/dev/null; then pacman -Rdd --noconfirm "\$p"; fi@pacman -Rdd --noconfirm "$p" 2>/dev/null || true@' "$PI"
 sed -i 's@ linux-zen-headers linux-headers @ linux-zen-headers @' "$PI"
