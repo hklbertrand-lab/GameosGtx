@@ -53,4 +53,5 @@ journalctl --user -b -u gamescope-session-plus@steam
 - **Saccades** : ajouter `--force-composition` dans `GAMESCOPE_ARGS`.
 - **HDR** : fonctionne (gamescope l'active depuis l'EDID, BT2020/ST2084) en 1440p@120 ou 1080p. Il noircit l'écran en 4K@60 (10-bit trop juste sur HDMI 2.0) : ne pas forcer le HDR au-dessus de 1440p.
 - **Mise à jour du noyau** : DKMS recompile le module automatiquement. Ne jamais retirer `IgnorePkg` : le pilote 590+ ne démarre pas sur la 1080 Ti.
+- **Télécommande TV (HDMI-CEC)** : la 1080 Ti n'expose pas de CEC (limite NVIDIA). Pour piloter Steam à la télécommande de la TV, voir [`cec-pico/`](cec-pico/) — adaptateur maison Pi Pico (CEC → clavier USB), ~10 €.
 - **Veille / réveil manette** : la veille système est **désactivée** (`suspend.target` masqué + `logind IdleAction=ignore`). Raison : une manette sans fil (Xbox 360…) ne peut pas réveiller depuis la veille (lien radio coupé, pas de re-synchro au récepteur). Le système reste donc allumé et répond tout de suite à la manette. Pour protéger un écran OLED, éteindre la TV (sa dalle) quand on ne joue pas — la console reste prête, la manette la réveille dès que la TV se rallume.
