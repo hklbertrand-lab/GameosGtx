@@ -44,5 +44,6 @@ journalctl --user -b -u gamescope-session-plus@steam
 ## Dépannage
 - **Écran noir au démarrage** : depuis un TTY (Ctrl+Alt+F3), vérifier `modeset=Y` et lancer `gamescope -- steam -gamepadui` à la main pour lire l'erreur.
 - **Résolution ou fréquence incorrecte** : modifier `SCREEN_WIDTH`, `SCREEN_HEIGHT` et `CUSTOM_REFRESH_RATES` dans `environment.d`.
-- **Saccades** : ajouter `--force-composition` dans `GAMESCOPE_ARGS`. Le HDR n'est pas disponible sur Pascal.
+- **Saccades** : ajouter `--force-composition` dans `GAMESCOPE_ARGS`.
+- **HDR** : fonctionne (gamescope l'active depuis l'EDID, BT2020/ST2084) en 1440p@120 ou 1080p. Il noircit l'écran en 4K@60 (10-bit trop juste sur HDMI 2.0) : ne pas forcer le HDR au-dessus de 1440p.
 - **Mise à jour du noyau** : DKMS recompile le module automatiquement. Ne jamais retirer `IgnorePkg` : le pilote 590+ ne démarre pas sur la 1080 Ti.

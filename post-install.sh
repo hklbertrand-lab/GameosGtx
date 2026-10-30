@@ -106,16 +106,19 @@ ENV_DIR="$USER_HOME/.config/environment.d"
 # install -d ne donne le propriétaire qu'au dernier dossier : ~/.config doit aussi appartenir à l'utilisateur.
 install -d -o "$USER_NAME" -g "$USER_NAME" "$USER_HOME/.config" "$ENV_DIR"
 cat > "$ENV_DIR/gamescope-session-plus.conf" <<'EOF'
-# Lu par gamescope-session-plus. Pas de HDR ni de VRR HDMI sur Pascal.
-SCREEN_WIDTH=1920
-SCREEN_HEIGHT=1080
+# Lu par gamescope-session-plus. Sortie 1440p@120 sur la TV (HDMI 2.0).
+SCREEN_WIDTH=2560
+SCREEN_HEIGHT=1440
 CUSTOM_REFRESH_RATES=60,120,144
 # Options supplémentaires passées à gamescope :
 GAMESCOPE_ARGS=--adaptive-sync
 # NVIDIA : Vulkan WSI via la couche gamescope
 ENABLE_GAMESCOPE_WSI=1
 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
-# Pascal + gamescope : pas de HDR (Steam l'active sinon sur une TV HDR -> écran noir)
+# HDR : gamescope l'active depuis l'EDID de la TV (BT2020/ST2084) et ça marche
+# en 1440p@120. Les deux flags à 0 empêchent Steam de FORCER le HDR en 4K@60,
+# seul cas qui noircit l'écran (10-bit trop juste sur HDMI 2.0). Ne pas les passer
+# à 1 sans repasser d'abord en-dessous de 4K.
 STEAM_GAMESCOPE_HDR_SUPPORTED=0
 ENABLE_GAMESCOPE_HDR=0
 EOF
