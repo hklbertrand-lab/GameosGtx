@@ -17,7 +17,8 @@ AUR_PKGS=(nvidia-580xx-utils lib32-nvidia-580xx-utils
 [[ $EUID -ne 0 ]] || { echo "Lance en utilisateur normal (makepkg refuse root)." >&2; exit 1; }
 sudo pacman -S --needed --noconfirm archiso base-devel git
 
-rm -rf "$WORK"; mkdir -p "$WORK/aur"
+# mkarchiso laisse des fichiers root dans $WORK : nettoyage en sudo (rebuilds).
+sudo rm -rf "$WORK"; mkdir -p "$WORK/aur"
 cp -r /usr/share/archiso/configs/releng "$PROFILE"
 
 # 1. Paquets AUR -> dépôt local embarqué dans l'ISO (/opt/gameos/repo)
