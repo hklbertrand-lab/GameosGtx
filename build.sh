@@ -33,11 +33,16 @@ repo-add "$REPO/gameos.db.tar.gz" "$REPO"/*.pkg.tar.zst
 # 2. Overlay GameOS
 cp -r "$HERE/profile/airootfs/." "$PROFILE/airootfs/"
 install -Dm755 "$HERE/post-install.sh" "$PROFILE/airootfs/root/post-install.sh"
+install -Dm755 "$HERE/install.sh" "$PROFILE/airootfs/root/install.sh"
+# raccourci : « gameos-install » dans le PATH de l'ISO
+install -Dm755 "$HERE/install.sh" "$PROFILE/airootfs/usr/local/bin/gameos-install"
 cat "$HERE/profile/packages.extra" >> "$PROFILE/packages.x86_64"
 sed -i 's/^iso_name=.*/iso_name="gameos"/; s/^iso_label=.*/iso_label="GAMEOS_$(date +%Y%m)"/' \
     "$PROFILE/profiledef.sh"
 cat >> "$PROFILE/profiledef.sh" <<'EOF'
 file_permissions+=(["/root/post-install.sh"]="0:0:755")
+file_permissions+=(["/root/install.sh"]="0:0:755")
+file_permissions+=(["/usr/local/bin/gameos-install"]="0:0:755")
 EOF
 # multilib pour construire l'ISO
 sed -i '/^#\[multilib\]/,/^#Include/ s/^#//' "$PROFILE/pacman.conf"

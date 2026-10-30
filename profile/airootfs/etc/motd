@@ -1,9 +1,15 @@
 
-  GameOS — installeur console de jeu (Steam + gamescope, NVIDIA Pascal)
+  GameOS — console de jeu (Steam + gamescope, NVIDIA Pascal)
 
-  1. archinstall                    (profil minimal, chargeur GRUB ou systemd-boot,
-                                     crée ton utilisateur, noyau linux-zen conseillé)
-  2. cp -r /root/post-install.sh /opt/gameos /mnt/root/
-  3. arch-chroot /mnt env LOCAL_REPO=/root/gameos/repo /root/post-install.sh <utilisateur>
-  4. reboot
+  INSTALLATION AUTOMATIQUE (recommandée) :
+
+      gameos-install /dev/XXX        # XXX = SSD cible — EFFACE TOUT le disque
+
+    Liste les disques :  lsblk -dpo NAME,SIZE,MODEL
+    L'installeur partitionne, installe Arch + GameOS (1440p@120 + HDR,
+    pilote 580xx depuis le dépôt local), demande les mots de passe, puis :
+
+      reboot                         # démarre direct dans Steam (mode Deck)
+
+  INSTALLATION MANUELLE (si besoin) : voir /root/install.sh et /root/post-install.sh
 

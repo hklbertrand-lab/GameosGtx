@@ -15,12 +15,18 @@ Arch Linux qui démarre directement dans Steam Big Picture (interface Steam Deck
 sudo ./post-install.sh monutilisateur
 ```
 
-### B. ISO maison
-Sur une machine Arch, ou dans un conteneur `archlinux`. WSL2 ne convient pas car mkarchiso a besoin des loop devices.
+### B. ISO maison + installeur automatique (install définitive propre)
+Construire l'ISO sur une machine Arch (ou conteneur `archlinux`). WSL2 ne convient pas : mkarchiso a besoin des loop devices.
 ```bash
-./build.sh
+./build.sh            # ISO dans out/
 ```
-L'ISO arrive dans `out/`. Flashe-la avec Rufus (mode DD) ou `dd`, démarre dessus, puis suis le message affiché (`/etc/motd`) : archinstall, puis post-install en chroot avec le dépôt local. L'installation ne demande alors aucune compilation AUR.
+Flasher l'ISO avec Rufus (mode DD) ou `dd`, démarrer dessus **en UEFI**, puis :
+```bash
+gameos-install /dev/XXX      # XXX = SSD cible (lsblk -dpo NAME,SIZE,MODEL) — EFFACE TOUT
+```
+`install.sh` partitionne (GPT : ESP 1 Gio + root ext4), installe une Arch propre, pose systemd-boot, demande les mots de passe root/utilisateur, puis lance `post-install.sh` avec le dépôt local embarqué — **aucune compilation AUR, aucune étape manuelle**. Au `reboot`, la machine démarre direct dans Steam en 1440p@120 + HDR.
+
+Réglages par défaut en tête d'`install.sh` : utilisateur `hklbertrand`, clavier `fr`, locale `en_US.UTF-8`, fuseau `Europe/Paris`, noyau `linux-zen`.
 
 ## Ce que fait post-install.sh
 | Étape | Détail |
