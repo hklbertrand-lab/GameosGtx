@@ -40,10 +40,12 @@ fi
 log "Installation de la pile gaming"
 # Retire un éventuel pilote nvidia récent (590+ ne gère plus Pascal) ou open.
 for p in nvidia nvidia-open nvidia-dkms nvidia-open-dkms nvidia-utils lib32-nvidia-utils; do
-    if pacman -Q "$p" &>/dev/null; then pacman -Rdd --noconfirm "$p"; fi
+    # Retrait tolérant : -Rdd échoue en « target not found » si le nom n'est pas
+    # installé (ou n'existe que via un provides du 580xx) -> ne pas tuer le script.
+    pacman -Rdd --noconfirm "$p" 2>/dev/null || true
 done
 pacman -Syu --noconfirm --needed \
-    base-devel git dkms linux-zen linux-zen-headers linux-headers \
+    base-devel git dkms linux-zen linux-zen-headers \
     steam gamescope mangohud lib32-mangohud gamemode lib32-gamemode \
     vulkan-icd-loader lib32-vulkan-icd-loader egl-wayland \
     pipewire pipewire-pulse pipewire-alsa lib32-pipewire wireplumber \
