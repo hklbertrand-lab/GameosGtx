@@ -57,7 +57,11 @@ if [[ -n "${LOCAL_REPO:-}" && -d "$LOCAL_REPO" ]]; then
     # (lib32-nvidia-utils / nvidia-utils) via le provider nvidia-libgl ; ils
     # entrent en conflit avec les 580xx. On les retire juste avant d'installer
     # les 580xx (qui fournissent le même libgl) -> plus de conflit non résolu.
-    pacman -Rdd --noconfirm lib32-nvidia-utils nvidia-utils 2>/dev/null || true
+    # Retrait paquet par paquet : un -Rdd groupé échoue en entier si l'un des
+    # deux n'est pas installé, laissant l'autre en place (et le conflit).
+    for p in lib32-nvidia-utils nvidia-utils; do
+        pacman -Rdd --noconfirm "$p" 2>/dev/null || true
+    done
     pacman -U --noconfirm --needed "$LOCAL_REPO"/*.pkg.tar.zst
 else
     BUILD_DIR="$(sudo -u "$USER_NAME" mktemp -d)"
