@@ -13,8 +13,8 @@ echo "==> Patch du post-install (retrait tolérant + sans linux-headers)"
 sed -i 's@if pacman -Q "\$p" &>/dev/null; then pacman -Rdd --noconfirm "\$p"; fi@pacman -Rdd --noconfirm "$p" 2>/dev/null || true@' "$PI"
 sed -i 's@ linux-zen-headers linux-headers @ linux-zen-headers @' "$PI"
 
-echo "==> Retrait des libs NVIDIA mainline en conflit"
-for p in lib32-nvidia-utils nvidia-utils; do
+echo "==> Retrait des libs NVIDIA mainline + linux-headers (DKMS arch1)"
+for p in lib32-nvidia-utils nvidia-utils linux-headers; do
     arch-chroot /mnt pacman -Rdd --noconfirm "$p" 2>/dev/null
 done
 
