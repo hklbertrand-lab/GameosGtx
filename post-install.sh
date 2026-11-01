@@ -50,7 +50,7 @@ pacman -Syu --noconfirm --needed \
     vulkan-icd-loader lib32-vulkan-icd-loader egl-wayland \
     pipewire pipewire-pulse pipewire-alsa lib32-pipewire wireplumber \
     plasma-meta sddm konsole dolphin networkmanager bluez bluez-utils \
-    xdg-desktop-portal-kde ttf-liberation
+    xdg-desktop-portal-kde ttf-liberation fuse2
 
 # --------------------------------------------------------------- paquets AUR
 log "Installation des paquets AUR (${AUR_PKGS[*]})"
@@ -212,7 +212,36 @@ Categories=Game;
 EOF
 chown "$USER_NAME:$USER_NAME" "$USER_HOME/.local/share/applications/gameos-return-to-gaming.desktop"
 
-systemctl enable sddm NetworkManager bluetooth
+# Au demarrage : TOUJOURS repartir en mode Jeu, quelle que soit la derniere
+# session. "Passer au bureau" reste valable pour la session en cours, mais ce
+# service oneshot remet Session=gamescope-session-steam AVANT que SDDM ne demarre.
+cat > /etc/systemd/system/gameos-reset-session.service <<'EOF'
+[Unit]
+Description=GameOS: toujours demarrer en mode Jeu (reset autologin SDDM)
+Before=display-manager.service
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sed -i 's/^Session=.*/Session=gamescope-session-steam/' /etc/sddm.conf.d/10-gameos-autologin.conf
+
+[Install]
+WantedBy=graphical.target
+EOF
+
+# Bureau KDE : pas d'ecran de verrouillage (ni au reveil, ni apres inactivite)
+install -d -o "$USER_NAME" -g "$USER_NAME" "$USER_HOME/.config"
+printf '[Daemon]\nAutolock=false\nLockOnResume=false\n' > "$USER_HOME/.config/kscreenlockerrc"
+chown "$USER_NAME:$USER_NAME" "$USER_HOME/.config/kscreenlockerrc"
+
+# GameOS Send (PC Windows) : extinction a distance + reveil Wake-on-LAN
+echo "$USER_NAME ALL=(root) NOPASSWD: /usr/bin/systemctl poweroff" \
+    > /etc/sudoers.d/61-gameos-power
+chmod 440 /etc/sudoers.d/61-gameos-power
+install -d /etc/NetworkManager/conf.d
+printf '[connection]\nethernet.wake-on-lan=64\n' > /etc/NetworkManager/conf.d/60-gameos-wol.conf
+
+systemctl enable sddm NetworkManager bluetooth gameos-reset-session.service
 
 log "Terminé. Redémarre : la machine démarrera directement dans Steam (mode Deck)."
 echo "Bureau KDE : Steam > Alimentation > Passer au bureau."
