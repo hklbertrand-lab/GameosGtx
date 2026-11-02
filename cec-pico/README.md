@@ -11,7 +11,7 @@ MIT). Recette ci-dessous **testée** : build RP2350 OK, keymap ajustée pour Ste
 ## Matériel
 | Pièce | Rôle | ~Prix |
 |---|---|---|
-| **RP2350-Zero** (Waveshare) *ou* **Pi Pico H** (RP2040) | MCU + USB natif | 5–13 € |
+| **RP2350-Zero** / **RP2040-Zero** (Waveshare) *ou* **Pi Pico H** (RP2040) | MCU + USB natif | 5–13 € |
 | **Breakout HDMI mâle→femelle 19 broches** (pas 2,54 mm) | tirer CEC/DDC sans couper le câble | 4–8 € |
 | 4 fils + soudure | relier les 4 broches | — |
 
@@ -22,7 +22,7 @@ aucun level shifter.
 ## Câblage (4 fils, full-size HDMI)
 Pico-CEC utilise le CEC **et** le bus DDC (I²C, pour lire l'EDID). Quatre connexions directes :
 
-| Broche HDMI | RP2350-Zero / Pico (cible `pico2` ou `pico`) |
+| Broche HDMI | RP2350-Zero (`pico2`) / RP2040-Zero / Pico (`pico`) |
 |---|---|
 | **13 — CEC** | **GP3** (`CEC_PIN`, défaut) |
 | **15 — DDC clock** | **GP5** (SCL, `PICO_DEFAULT_I2C_SCL_PIN`) |
@@ -41,7 +41,7 @@ git clone --recurse-submodules https://github.com/gkoh/pico-cec
 cd pico-cec
 # Adapter la touche "retour" pour Steam Big Picture (Backspace -> Échap) :
 sed -i 's/\[CEC_USER_EXIT\] = HID_KEY_BACKSPACE/[CEC_USER_EXIT] = HID_KEY_ESCAPE/' src/cec-config.c
-# RP2350-Zero (Pico 2) ; pour un Pi Pico RP2040 : -DPICO_BOARD=pico
+# RP2350-Zero (Pico 2) ; pour un RP2040-Zero ou un Pi Pico RP2040 : -DPICO_BOARD=pico
 cmake -S . -B build -DPICO_BOARD=pico2 -DCEC_PIN=3 -DCEC_OSD_NAME="GameOS"
 cmake --build build
 # -> build/pico-cec.uf2
@@ -66,8 +66,8 @@ Elle redémarre en clavier HID.
 - ✅ **Télécommande → navigation Steam** : objectif atteint, sans config.
 - ❌ **Synchro allumage/extinction** TV↔console (vraie pile `libcec` bidirectionnelle) : non
   couverte par l'approche HID ; il faudrait émuler un Pulse-Eight (protocole USB P8).
-- La **LED RGB (WS2812)** du RP2350-Zero ne sert pas de voyant d'état avec la cible `pico2`
-  générique — sans impact.
+- La **LED RGB (WS2812)** des RP2350-Zero / RP2040-Zero ne sert pas de voyant d'état avec la
+  cible générique (`pico2` / `pico`) — sans impact.
 
 ## Sources
 - Pico-CEC : https://github.com/gkoh/pico-cec
